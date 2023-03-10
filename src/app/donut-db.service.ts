@@ -11,12 +11,11 @@ import { Donut } from './donut';      // importing interface
 export class DonutDbService {
 
   urlbase:string = "https://grandcircusco.github.io/demo-apis/donuts.json";
-  constructor(private httpClient:HttpClient) {
 
+  constructor(private httpClient:HttpClient) {
    }
 
-   getDonut() : Observable<Donut> {
+  getDonut() : Observable<Donut> {
     return this.httpClient.get<Donut>(this.urlbase);
-
   }
 }

@@ -12,13 +12,12 @@ import { People } from './people';      // importing interface
 export class PeopleDbService {
 
   urlbase:string = "https://grandcircusco.github.io/demo-apis/computer-science-hall-of-fame.json";
+ 
   constructor(private httpClient:HttpClient) {
+  }
 
-   }
-
-   getDonut() : Observable<People> {
+  getDonut() : Observable<People> {
     return this.httpClient.get<People>(this.urlbase);
-
   }
 
 }
