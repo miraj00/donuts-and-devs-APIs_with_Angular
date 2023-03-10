@@ -1,3 +1,4 @@
+import { HttpClientModule } from '@angular/common/http';     // import HttpClientModule
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
@@ -12,7 +13,8 @@ import { FamousPeopleComponent } from './famous-people/famous-people.component';
     FamousPeopleComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    HttpClientModule                 // import HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
