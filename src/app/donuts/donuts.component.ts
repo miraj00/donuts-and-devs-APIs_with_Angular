@@ -8,17 +8,10 @@ import { DonutDbService } from '../donut-db.service';
   templateUrl: './donuts.component.html',
   styleUrls: ['./donuts.component.css']
 })
+
 export class DonutsComponent {
 
   title = 'donutDatabse';
   donut : Donut = ({} as any) as Donut;
-
-  constructor ( private db : DonutDbService) {
-
-      db.getDonut().subscribe((result:Donut)=>{
-        this.donut =result;
-      })
-
-  }
 
 }

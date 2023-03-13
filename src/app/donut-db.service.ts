@@ -1,7 +1,8 @@
-import { Injectable } from '@angular/core';
+
 import { HttpClient } from '@angular/common/http';
-import { Observable } from 'rxjs';
-import { Donut } from './donut';      // importing interface
+import { Injectable } from '@angular/core';
+import { map, Observable } from 'rxjs';
+import { Donuts, Result } from './donut';      // importing interface
 
 
 @Injectable({
@@ -15,7 +16,11 @@ export class DonutDbService {
   constructor(private httpClient:HttpClient) {
    }
 
-  getDonut() : Observable<Donut> {
-    return this.httpClient.get<Donut>(this.urlbase);
+  getDonut() : Observable<any> {
+  
+    return this.httpClient.get<Donuts>(this.urlbase)
+    .pipe(map((data)=> data.results));
+
   }
+
 }

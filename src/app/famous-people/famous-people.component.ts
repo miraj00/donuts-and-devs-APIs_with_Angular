@@ -14,10 +14,10 @@ export class FamousPeopleComponent {
  people : People = ({} as any) as People;
  
  constructor( private db : PeopleDbService) {
-      db.getPeople().subscribe((result:People)=>{
+      // db.getPeople().subscribe((result:People)=>{
         
-        this.people = result;
-      })
+      //   this.people = result;
+      // })
  }
 
 }
