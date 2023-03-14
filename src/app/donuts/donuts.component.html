@@ -1,2 +1,15 @@
 
+<h1> Here is info about <span style="background-color: tomato;">  {{donutInfo.name | uppercase }} </span>  Donut</h1>
 
+<!-- <p *ngIf="loading">Loading...</p> -->
+
+<div *ngIf="!loading">
+    <h2>Donut Name: {{donutInfo.name}}</h2>
+    <h2>Calories: {{donutInfo.calories}}</h2>
+    <img src="{{donutInfo.photo}}" style="height:300px; width: auto; "/>
+
+</div>
+
+<br><br>
+
+<button [routerLink]="['/']"  style="height: 50px; width: 400px; background-color: cornflowerblue;"> Click Here to Return to Home Page </button>

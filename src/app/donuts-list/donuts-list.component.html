@@ -1,0 +1,10 @@
+<p>donuts-list works!</p>
+
+
+<div *ngFor="let donutName of Result; index as i" >
+    <ul>
+    
+       <li>   <a [routerLink]="['donut', i]">{{donutName.name}}</a> </li>
+        </ul>  
+    
+    </div>

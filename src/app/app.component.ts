@@ -1,7 +1,4 @@
 import { Component } from '@angular/core';
-import { Donuts, Result } from './donut';
-import { DonutDbService } from './donut-db.service';
-
 
 @Component({
   selector: 'app-root',
@@ -12,21 +9,7 @@ import { DonutDbService } from './donut-db.service';
 export class AppComponent {
   
     title = 'donuts-and-devs';
-
-    donutResults : Donuts=({}) as Donuts ;
-
-    Result: Result[] | undefined;
-
-    constructor(private donutAPI:DonutDbService) { }
-
-
-    ngOnInit():void{
-      this.donutAPI.getDonut().subscribe((data)=>{
-              this.Result = data });
-                
-}
-
-  
+ 
 }
 
 
