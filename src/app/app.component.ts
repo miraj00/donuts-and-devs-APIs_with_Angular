@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
-import { Observable, pluck } from 'rxjs';
-import { Donut, Donuts, Result } from './donut';
+import { Donuts, Result } from './donut';
 import { DonutDbService } from './donut-db.service';
 
 
@@ -21,10 +20,10 @@ export class AppComponent {
     constructor(private donutAPI:DonutDbService) { }
 
 
-ngOnInit():void{
-  this.donutAPI.getDonut().subscribe((data)=>{
-          this.Result = data });
-             
+    ngOnInit():void{
+      this.donutAPI.getDonut().subscribe((data)=>{
+              this.Result = data });
+                
 }
 
   

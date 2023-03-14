@@ -6,11 +6,13 @@ import { AppComponent } from './app.component';
 import { DonutsComponent } from './donuts/donuts.component';
 import { FamousPeopleComponent } from './famous-people/famous-people.component';
 
+
 @NgModule({
   declarations: [
     AppComponent,
     DonutsComponent,
     FamousPeopleComponent
+    
   ],
   imports: [
     BrowserModule,
