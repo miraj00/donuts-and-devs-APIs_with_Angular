@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Observable } from 'rxjs';
+import { map, Observable } from 'rxjs';
 import { People } from './people';      // importing interface
 
 
@@ -16,8 +16,10 @@ export class PeopleDbService {
   constructor(private httpClient:HttpClient) {
   }
 
-  getDonut() : Observable<People> {
-    return this.httpClient.get<People>(this.urlbase);
+  getPeople() : Observable<People> {
+    console.log(this.httpClient.get<People>(this.urlbase).pipe(map((data)=> data)));
+    return this.httpClient.get<People>(this.urlbase).pipe(map((data)=> data));
+   
   }
 
 }

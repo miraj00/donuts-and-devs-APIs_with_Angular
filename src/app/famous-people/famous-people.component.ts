@@ -10,14 +10,22 @@ import { PeopleDbService } from '../people-db.service';
 
 export class FamousPeopleComponent {
 
-  title = 'peopleDatabse';  
- people : People = ({} as any) as People;
- 
- constructor( private db : PeopleDbService) {
-      // db.getPeople().subscribe((result:People)=>{
-        
-      //   this.people = result;
-      // })
- }
+    title = 'peopleDatabse';  
+
+     
+    peopleInfo : People [] | undefined;
+
+    constructor( private peopleAPI : PeopleDbService) { }
+
+
+    ngOnInit() : void {
+        this.getAllPeople();
+    }
+    
+    getAllPeople():void{  
+      this.peopleAPI.getPeople().subscribe((data)=>{
+        this.peopleInfo = data});
+        console.log(this.peopleInfo);
+    }
 
 }
