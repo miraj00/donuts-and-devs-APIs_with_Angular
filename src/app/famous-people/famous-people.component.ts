@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 import { People } from '../people';
 import { PeopleDbService } from '../people-db.service';
 
@@ -8,24 +9,23 @@ import { PeopleDbService } from '../people-db.service';
   styleUrls: ['./famous-people.component.css']
 })
 
-export class FamousPeopleComponent {
+export class FamousPeopleComponent implements OnInit {
 
     title = 'peopleDatabse';  
 
-     
-    peopleInfo : People [] | undefined;
+    constructor(private route: ActivatedRoute, private peopleAPI : PeopleDbService) {
+  
 
-    constructor( private peopleAPI : PeopleDbService) { }
+     }
 
+    peopleInfo : People = ({} as any) as People ;
 
     ngOnInit() : void {
-        this.getAllPeople();
-    }
-    
-    getAllPeople():void{  
-      this.peopleAPI.getPeople().subscribe((data)=>{
-        this.peopleInfo = data});
-        console.log(this.peopleInfo);
+        this.peopleAPI.getPeople().subscribe((data)=>{
+             this.peopleInfo = data;
+           
+            });  
+                   
     }
 
 }

@@ -1,31 +1,24 @@
-<h1> List of People </h1>
+<h1 style="margin-left : 450px"> List of People </h1>
 
 
-<table>
-    <tr>
-      <th>First Name</th>
-      <th>Last Name</th>
-      <th>Innovation</th>
-      <th>Year</th>
-    </tr>
-   
-
-    <!-- <div *ngFor="let people of peopleList"> -->
-    <ul>
-       <li>{{peopleInfo.firstName}}</li>
-
-
-    </ul>
-
-    <!-- </div> -->
-<!-- 
-    <div *ngFor="let people of peopleList">
+<table style=" margin-left : 100px">
+    <thead>
         <tr>
-        <td>{{people.firstName}}</td>
-        <td>{{people.lastName}}</td>
-        <td>{{people.innovation}}</td>
-        <td>{{people.year}}</td>
+            <th>First Name</th>    
+            <th>Last Name</th>
+            <th>Innovation</th>
+            <th>Year</th>
         </tr>
-    </div>  -->
+    </thead>
+   
+    <tbody>
+        <tr *ngFor="let people of peopleInfo.complete"> 
 
-</table> 
+                <td>{{people.firstName}}</td>   
+                <td>{{people.lastName}}</td>
+                <td>{{people.innovation}}</td>
+                <td>{{people.year}}</td>    
+        </tr>
+    </tbody>
+
+</table>

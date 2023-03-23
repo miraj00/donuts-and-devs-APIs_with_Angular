@@ -14,12 +14,12 @@ export class PeopleDbService {
   urlbase:string = "https://grandcircusco.github.io/demo-apis/computer-science-hall-of-fame.json";
  
   constructor(private httpClient:HttpClient) {
+
   }
 
   getPeople() : Observable<People> {
-    console.log(this.httpClient.get<People>(this.urlbase).pipe(map((data)=> data)));
-    return this.httpClient.get<People>(this.urlbase).pipe(map((data)=> data));
-   
+    console.log(this.httpClient.get<People>(this.urlbase));
+    return this.httpClient.get<People>(this.urlbase);
   }
 
 }

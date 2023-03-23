@@ -29,6 +29,7 @@ export class DonutDbService {
   url:string = "https://grandcircusco.github.io/demo-apis/donuts";
 
   getDonutDetails(id:number){
+    console.log(this.httpClient.get<DonutDetails>(this.url +"/"+ id +".json"));
     return this.httpClient.get<DonutDetails>(this.url +"/"+ id +".json");
   }
 

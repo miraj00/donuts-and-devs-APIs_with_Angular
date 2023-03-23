@@ -20,6 +20,6 @@ export class DonutsListComponent {
   ngOnInit():void{
     this.donutAPI.getDonut().subscribe((data)=>{
             this.Result = data });
-
+            console.log(this.Result);
 }
 }
